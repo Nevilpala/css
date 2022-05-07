@@ -27,3 +27,49 @@ h1,h2,h3,h4,h5,h6,p,span,a,img,div,i,input,textarea,body,header,nav,ul,li,nav,he
 .textsm{
 	font-size: 13px;
 }
+
+
+
+/*CLOSE-BTN*/
+.box-btn{
+	position: relative;
+	width: 50px;
+	height: 50px;
+}
+.box-btn .btn-nav::after{ 
+	position: absolute;
+	content: ' ';	
+	width: 50px; 
+	top: 5px; 
+	border-radius: 5px; 
+	background-color: red; 
+	transition: all .5s;
+	height: 5px;
+	left: 0; 
+}
+.box-btn .btn-nav::before{ 
+	position: absolute; 
+	content: ' ';
+	width: 50px; 
+	height: 5px;
+	top: 25px;
+	left: 0; 
+	border-radius: 5px; 
+	background-color: white;
+	transition: all .5s;
+}
+.box-btn input{
+	position: absolute;
+	height: 50px;
+	width: 50px; 
+	margin: 0; 
+	z-index: 9;
+	opacity: 0;
+	cursor: pointer;
+}
+.box-btn input:checked~.btn-nav::after{
+ 	transform: rotate(45deg) translate(0px, 15px);
+}
+.box-btn input:checked~.btn-nav::before{
+ 	transform: rotate(-45deg) translate(0px, -15px);
+}
